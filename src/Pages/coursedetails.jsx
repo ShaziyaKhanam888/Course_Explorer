@@ -1,9 +1,3 @@
-/**
- * CourseDetail shows course overview and topics. When a topic is selected,
- * this page simply provides a header; the MainContent component shows the subtopic list / subtopic detail.
- *
- * Note: App's grid layout places CourseDetail left and MainContent on right.
- */
 export default function CourseDetail({
   course,
   selectedTopic,
