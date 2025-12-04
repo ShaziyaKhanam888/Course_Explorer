@@ -1,0 +1,124 @@
+ [
+  {
+    "id": 1,
+    "title": "Full Stack Web Development Bootcamp",
+    "subtitle": "Master frontend and backend development",
+    "description": "Complete path to become a full-stack developer.",
+    "topics": [
+      {
+        "id": 101,
+        "title": "Frontend Fundamentals",
+        "description": "Learn HTML, CSS, and responsive design",
+        "subtopics": [
+          {
+            "id": 1011,
+            "title": "HTML Basics",
+            "content": "HTML stands for HyperText Markup Language. It defines the structure of web pages.",
+            "codeExample": "<h1>Hello HTML</h1>\n<p>This is a webpage structure example.</p>",
+            "objectives": [
+              "Understand HTML document structure",
+              "Use headings, paragraphs & semantic tags"
+            ]
+          },
+          {
+            "id": 1012,
+            "title": "CSS Styling",
+            "content": "CSS adds style, layout and visual structure to HTML content.",
+            "codeExample": "h1 {\n  color: blue;\n  text-align: center;\n}",
+            "objectives": [
+              "Learn selectors & properties",
+              "Apply styling to create layouts"
+            ]
+          },
+          {
+            "id": 1013,
+            "title": "Responsive Design",
+            "content": "Responsive design uses media queries to adapt UI to various screen sizes.",
+            "codeExample": "@media (max-width: 600px) {\n  body { font-size: 14px; }\n}",
+            "objectives": [
+              "Use flexbox & grid",
+              "Media queries and mobile-first design"
+            ]
+          }
+        ]
+      },
+      {
+        "id": 102,
+        "title": "JavaScript Essentials",
+        "description": "Master fundamentals of JavaScript",
+        "subtopics": [
+          {
+            "id": 1021,
+            "title": "Variables & Data Types",
+            "content": "Variables store values. JS supports string, number, boolean, null, undefined, object, symbol.",
+            "codeExample": "let name = 'Rahul';\nlet score = 99;\nconsole.log(name, score);",
+            "objectives": [
+              "use let const var properly",
+              "understand primitive & reference types"
+            ]
+          },
+
+    {
+      "id": 1022,
+      "title": "Functions & Scope",
+      "content": "Function declarations, expressions, and arrow functions.",
+      "objectives": ["Create reusable functions", "Understand lexical scope", "Use arrow functions"],
+      "codeExample": "const add = (a,b)=>a+b;\nconsole.log(add(5,2));"
+    },
+    {
+      "id": 1023,
+      "title": "Async JavaScript",
+      "content": "Intro to promises and async/await",
+      "objectives": ["Handle asynchronous code", "Use promises", "Write async/await"],
+      "codeExample": "async function fetchData(){ return await fetch('/api'); }"
+    },
+    {
+      "id": 1024,
+      "title": "DOM Manipulation",
+      "content": "Selecting, updating, and styling DOM nodes",
+      "objectives": ["querySelector", "addEventListener", "update elements"],
+      "codeExample": "document.getElementById('btn').addEventListener('click',()=>alert('Clicked'));"
+    }
+        ]
+      },
+      {
+        "id": 103,
+        "title": "React Development",
+        "description": "Build apps using React",
+        "subtopics": [
+          {
+            "id": 1031,
+            "title": "React Components",
+            "content": "React is based on components — reusable building blocks.",
+            "codeExample": "export default function App() {\n  return <h1>Hello React</h1>;\n}",
+            "objectives": [
+              "Understand JSX",
+              "Build function components"
+            ]
+          },
+    {
+      "id": 1032,
+      "title": "State Management",
+      "content": "useState and dynamic rendering",
+      "objectives": ["Manage UI state", "Handle user interactions", "Improve component reactivity"],
+      "codeExample": "const [count,setCount]=useState(0);\n<button onClick={()=>setCount(count+1)}>+</button>"
+    },
+    {
+      "id": 1033,
+      "title": "useEffect Hook",
+      "content": "Handle side effects and API calls",
+      "objectives": ["Run code after rendering", "Fetch API data", "Cleanup effects"],
+      "codeExample": "useEffect(()=>{ console.log('Mounted'); },[]);"
+    },
+    {
+      "id": 1034,
+      "title": "React Router",
+      "content": "Navigation & Multi-page routing",
+      "objectives": ["Setup router", "Navigate between pages", "Dynamic params"],
+      "codeExample": "<Route path='/course/:id' element={<Course/>}/>"
+    }
+        ]
+      }
+    ]
+  }
+]
