@@ -1,32 +1,68 @@
 import { useState } from "react";
+import courses from "../Data/courses.json";
 
-export default function AdminPage() {
-  const [authorized, setAuthorized] = useState(false);
-  const [pass, setPass] = useState("");
-
-  if (!authorized) {
-    return (
-      <div className="p-6 flex flex-col items-center">
-        <input
-          type="password"
-          placeholder="Enter admin password"
-          className="border px-3 py-2 rounded"
-          onChange={(e) => setPass(e.target.value)}
-        />
-        <button
-          onClick={() => pass === "admin123" && setAuthorized(true)}
-          className="mt-3 bg-blue-600 text-white px-4 py-2 rounded"
-        >
-          Login
-        </button>
-      </div>
-    );
-  }
+export default function Sidebar({
+  sidebarOpen = true,
+  setSidebarOpen = () => {},
+  selectedCourse,
+  setSelectedCourse,
+  setSelectedTopic,
+  setSelectedSubtopic,
+}) {
+  const [expandedCourseId, setExpandedCourseId] = useState(null);
+  const [search, setSearch] = useState("");
 
   return (
-    <div className="p-6">
-      <h2 className="text-2xl font-bold mb-4">Admin Dashboard</h2>
-      <p className="text-gray-700">Welcome Admin — No backend connected yet.</p>
-    </div>
+    <aside
+      className={`bg-white border-r transition-all duration-300 overflow-hidden ${
+        sidebarOpen ? "w-64" : "w-16"
+      }`}
+    >
+      {sidebarOpen && (
+        <div className="p-3">
+          <input
+            type="text"
+            placeholder="Search courses..."
+            className="w-full p-2 border rounded mb-3 text-sm"
+            value={search}
+            onChange={(e) => setSearch(e.target.value)}
+          />
+        </div>
+      )}
+
+      {sidebarOpen && (
+        <nav className="p-3 pt-0">
+          {courses
+            .filter((c) => c.title.toLowerCase().includes(search.toLowerCase()))
+            .map((course) => {
+              const isExpanded = expandedCourseId === course.id;
+              const isSelected = selectedCourse?.id === course.id;
+
+              return (
+                <div key={course.id} className="mb-3">
+                  <button
+                    className={`w-full flex justify-between items-center text-left p-2 text-sm rounded hover:bg-gray-100 ${
+                      isSelected ? "bg-blue-50 border-l-4 border-blue-500" : ""
+                    }`}
+                    onClick={() => {
+                      setSelectedCourse(course);
+                      setSelectedTopic(null);
+                      setSelectedSubtopic(null);
+                      setExpandedCourseId(isExpanded ? null : course.id);
+                    }}
+                  >
+                    <div>
+                      <div className="font-semibold">{course.title}</div>
+                      <div className="text-xs text-gray-600">
+                        {course.subtitle}
+                      </div>
+                    </div>
+                  </button>
+                </div>
+              );
+            })}
+        </nav>
+      )}
+    </aside>
   );
 }

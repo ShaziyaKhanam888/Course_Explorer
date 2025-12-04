@@ -12,9 +12,8 @@ export default function App() {
   const [selectedTopic, setSelectedTopic] = useState(null);
   const [selectedSubtopic, setSelectedSubtopic] = useState(null);
 
-  // If no course selected show Home. When a course is selected show CourseDetail (main area)
   return (
-    <div className="flex h-screen md:flex-row">
+    <div className="flex h-screen md:flex-row sm:flex-col">
       <Sidebar
         sidebarOpen={sidebarOpen}
         setSidebarOpen={setSidebarOpen}
@@ -24,7 +23,7 @@ export default function App() {
         setSelectedSubtopic={setSelectedSubtopic}
       />
 
-      <main className="flex-1 overflow-auto bg-gray-50 md:p-6">
+      <main className="flex-1 overflow-auto bg-gray-50 md:p-6 sm:p-2">
         <MainContent
           selectedTopic={selectedTopic}
           selectedSubtopic={selectedSubtopic}

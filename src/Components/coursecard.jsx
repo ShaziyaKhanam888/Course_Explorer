@@ -1,11 +1,11 @@
-export default function CourseCard({ title, description, category }) {
+export default function CourseCard({ course, onClick }) {
   return (
-    <div className="border rounded-lg p-4 shadow hover:shadow-lg transition-shadow duration-200">
-      <h2 className="text-xl font-semibold mb-2 text-gray-800">{title}</h2>
-      <p className="text-gray-600 mb-2">{description}</p>
-      <span className="inline-block bg-blue-100 text-blue-800 text-sm px-2 py-1 rounded">
-        {category}
-      </span>
+    <div
+      className="border rounded-lg p-4 shadow hover:shadow-md transition cursor-pointer bg-white"
+      onClick={onClick}
+    >
+      <h2 className="font-bold text-xl">{course.title}</h2>
+      <p className="text-sm text-gray-600">{course.subtitle}</p>
     </div>
   );
 }
