@@ -48,13 +48,7 @@ export default function App() {
         ) : (
           <div className="grid grid-cols-1 lg:grid-cols-3  sm:grid-cols-2 gap-6">
             <div className="lg:col-span-2">
-              <CourseDetail
-                course={selectedCourse}
-                selectedTopic={selectedTopic}
-                setSelectedTopic={setSelectedTopic}
-                selectedSubtopic={selectedSubtopic}
-                setSelectedSubtopic={setSelectedSubtopic}
-              />
+              <CourseDetail course={selectedCourse} />
             </div>
           </div>
         )}
