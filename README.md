@@ -4,7 +4,7 @@
 This project is a learning dashboard containing courses, topics, subtopics, example code, progress tracking and responsive UI built using React + TailwindCSS.
 🚀 Live Demo
 
-Netlify Deployment:
+Netlify Deployment: https://course-explorer.netlify.app/
 
 Features:
 
@@ -33,17 +33,20 @@ course-explorer/
 │   │   ├── breadcrumbs.jsx
 │   │   ├── main-content.jsx
 │   │   └── coursecard.jsx
+│   │   └── progress.jsx
 │   │
 │   ├── Pages/
 │   │   ├── home.jsx
 │   │   └── coursedetails.jsx
+│   │   └── adminpage.jsx
 │   │
 │   ├── Data/
-│   │   └── courses.json
+│   │ └── courses.json
+│   │ └── users.json
 │   │
 │   ├── App.jsx
-│   ├── index.jsx
-│   └── styles.css (if any)
+│   ├── main.jsx
+│   └── index.css  
 │
 ├── package.json
 ├── README.md
